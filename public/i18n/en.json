@@ -1,0 +1,13 @@
+{
+    "openBrowser": "Open Bilibili video browser",
+    "insertTimestamp": "Insert current video timestamp",
+    "insertScreenshot": "Insert current video screenshot",
+    "insertClip": "Capture current video clip",
+    "togglePlay": "Play / pause current video",
+    "seekBackward": "Rewind 10 seconds",
+    "seekForward": "Forward 10 seconds",
+    "openNetdisk": "Open cloud drive",
+    "openCloudMounts": "Open cloud mount manager",
+    "openNativeCloud": "Open native cloud (experimental)",
+    "openSettings": "Open hotkey settings"
+}

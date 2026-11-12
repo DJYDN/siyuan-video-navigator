@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>网盘视频</title>
+        <style>
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                background: #101114;
+                color: #e8e8e8;
+                font: 14px system-ui, -apple-system, "Segoe UI", sans-serif;
+                overflow: hidden;
+            }
+            #wrap {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            #header {
+                flex: none;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px 14px;
+                border-bottom: 1px solid #2a2d33;
+                background: #17191e;
+            }
+            #header .label {
+                color: #8d939e;
+                font-size: 12px;
+            }
+            #title {
+                flex: 1;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-weight: 600;
+            }
+            #player {
+                flex: 1;
+                min-height: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            video {
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                outline: none;
+            }
+            #error {
+                display: none;
+                padding: 24px;
+                color: #ff9b9b;
+                text-align: center;
+                word-break: break-all;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div id="header">
+                <span class="label">网盘视频</span>
+                <span id="title">加载中…</span>
+            </div>
+            <div id="player">
+                <video id="video" controls preload="metadata" playsinline crossorigin="anonymous"></video>
+            </div>
+            <div id="error"></div>
+        </div>
+        <script>
+            (function () {
+                const params = new URLSearchParams(location.search);
+                const src = params.get("src") || "";
+                const title = params.get("title") || "网盘视频";
+                const start = Number(params.get("t") || 0);
+                const video = document.getElementById("video");
+                const titleElement = document.getElementById("title");
+                const errorElement = document.getElementById("error");
+                titleElement.textContent = title;
+                document.title = title;
+                if (!src) {
+                    errorElement.style.display = "block";
+                    errorElement.textContent = "缺少视频地址参数 src";
+                    return;
+                }
+                video.src = src;
+                video.addEventListener("loadedmetadata", function () {
+                    if (Number.isFinite(start) && start > 0) {
+                        try {
+                            video.currentTime = start;
+                        } catch (e) {}
+                    }
+                });
+                video.addEventListener("error", function () {
+                    errorElement.style.display = "block";
+                    const code = video.error ? video.error.code : 0;
+                    const message = video.error && video.error.message ? video.error.message : "未知错误";
+                    errorElement.textContent = "视频加载失败（代码 " + code + "）：" + message + "。若是网盘视频，可能是直链防盗链/Cookie 失效，请重新登录或反馈错误。";
+                });
+            })();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "name": "siyuan-video-navigator",
+  "author": "DJYDN",
+  "url": "https://github.com/DJYDN/siyuan-video-navigator",
+  "version": "0.13.7",
+  "minAppVersion": "3.8.0",
+  "kernels": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "backends": [
+    "windows",
+    "linux",
+    "darwin"
+  ],
+  "frontends": [
+    "desktop"
+  ],
+  "disabledInPublish": true,
+  "displayName": {
+    "default": "SiYuan Video Navigator",
+    "zh_CN": "思源视频导航笔记"
+  },
+  "description": {
+    "default": "Embedded Bilibili browser with one-click timestamp/screenshot video notes and click-back seek, fully local and free.",
+    "zh_CN": "在思源内部浏览 B 站，一键把播放时间/视频截图插入当前笔记，点击即可回到原视频、分 P 与秒数。完全免费、纯本地。"
+  },
+  "readme": {
+    "default": "README.md",
+    "zh_CN": "README.zh-CN.md"
+  },
+  "icon": "icon.png",
+  "preview": "preview.png",
+  "keywords": [
+    "video",
+    "bilibili",
+    "timestamp",
+    "screenshot",
+    "视频",
+    "时间戳",
+    "截图"
+  ]
+}

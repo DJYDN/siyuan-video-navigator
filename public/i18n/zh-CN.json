@@ -1,0 +1,13 @@
+{
+    "openBrowser": "打开 B 站视频浏览器",
+    "insertTimestamp": "插入当前视频时间戳",
+    "insertScreenshot": "插入当前视频截图",
+    "insertClip": "截取当前视频片段",
+    "togglePlay": "播放 / 暂停当前视频",
+    "seekBackward": "快退 10 秒",
+    "seekForward": "快进 10 秒",
+    "openNetdisk": "打开网盘",
+    "openCloudMounts": "打开网盘挂载管理",
+    "openNativeCloud": "打开原生网盘（实验）",
+    "openSettings": "打开快捷键设置"
+}

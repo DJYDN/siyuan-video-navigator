@@ -1,0 +1,27 @@
+# dependencies / build output
+node_modules/
+/dist/
+/dev/
+package.zip
+package-lock.json
+*.tsbuildinfo
+
+# research cache (downloaded reference repositories; not part of the plugin)
+.refs/
+
+# local package-manager caches (sandbox-friendly local build)
+.pnpm-store/
+.pnpm-home/
+.npm-cache/
+
+# local evidence copied from the SiYuan test workspace (may contain screenshots)
+evidence/*.png
+evidence/*.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+backups/
